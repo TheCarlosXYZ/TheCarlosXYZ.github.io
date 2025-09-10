@@ -5,32 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - TheCarlosXYZ</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Encabezado -->
   <header>
-    <h1>Hola, soy Carlos 👨‍💻</h1>
-    <p>Desarrollador Web | Estudiante de DPW</p>
+    <h1>Hola, soy Carlos 👋</h1>
+    <p>Desarrollador Web | Diseñador | Estudiante de Programación</p>
   </header>
 
-  <section id="proyectos">
-    <h2>Mis Proyectos</h2>
-    <div class="proyecto">
-      <h3>🛒 Tienda Online</h3>
-      <p>Mini ecommerce hecho con PHP y MySQL.</p>
-      <a href="https://github.com/TheCarlosXYZ/tienda-online">Ver en GitHub</a>
-    </div>
-    <div class="proyecto">
-      <h3>📚 Biblioteca</h3>
-      <p>Gestión de libros y préstamos en Java + MySQL.</p>
-      <a href="https://github.com/TheCarlosXYZ/biblioteca">Ver en GitHub</a>
+  <!-- Sobre mí -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Sobre mí</h2>
+    <p class="text-center">
+      Soy un apasionado de la programación y el diseño web. 
+      Me gusta crear aplicaciones y páginas modernas, rápidas y funcionales. 
+      Este es mi portafolio donde muestro algunos de mis proyectos.
+    </p>
+  </section>
+
+  <!-- Proyectos -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Mis Proyectos</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="img/proyecto1.png" class="card-img-top" alt="Proyecto 1">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto 1</h5>
+            <p class="card-text">Descripción breve del proyecto.</p>
+            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="img/proyecto2.png" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto 2</h5>
+            <p class="card-text">Descripción breve del proyecto.</p>
+            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="img/proyecto3.png" class="card-img-top" alt="Proyecto 3">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto 3</h5>
+            <p class="card-text">Descripción breve del proyecto.</p>
+            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Contacto -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <p class="text-center">¿Quieres trabajar conmigo? ¡Escríbeme!</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="mailto:carlosjoseponce2019@gmail.com" class="btn btn-outline-primary">Email</a>
+      <a href="https://github.com/TheCarlosXYZ" class="btn btn-outline-dark" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" class="btn btn-outline-info" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>📩 Contáctame: 
-      <a href="mailto:carlos@gmail.com">carlos@gmail.com</a> |
-      <a href="https://github.com/TheCarlosXYZ">GitHub</a>
-    </p>
+    <p>© 2025 - Portafolio creado por TheCarlosXYZ 🚀</p>
   </footer>
+
 </body>
 </html>
