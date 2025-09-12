@@ -1,82 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio - TheCarlosXYZ</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de TheCarlosXYZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-  <!-- Encabezado -->
-  <header>
-    <h1>Hola, soy Carlos 👋</h1>
-    <p>Desarrollador Web | Diseñador | Estudiante de Programación</p>
-  </header>
-
-  <!-- Sobre mí -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Sobre mí</h2>
-    <p class="text-center">
-      Soy un apasionado de la programación y el diseño web. 
-      Me gusta crear aplicaciones y páginas modernas, rápidas y funcionales. 
-      Este es mi portafolio donde muestro algunos de mis proyectos.
-    </p>
-  </section>
-
-  <!-- Proyectos -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Mis Proyectos</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="img/proyecto1.png" class="card-img-top" alt="Proyecto 1">
-          <div class="card-body">
-            <h5 class="card-title">Proyecto 1</h5>
-            <p class="card-text">Descripción breve del proyecto.</p>
-            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
-          </div>
+    <div class="top-nav">
+        <div class="top-nav-actions">
+            <a href="tareas.html" class="top-nav-link">Ver Tarea de semana 1 al 16</a>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="img/proyecto2.png" class="card-img-top" alt="Proyecto 2">
-          <div class="card-body">
-            <h5 class="card-title">Proyecto 2</h5>
-            <p class="card-text">Descripción breve del proyecto.</p>
-            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="img/proyecto3.png" class="card-img-top" alt="Proyecto 3">
-          <div class="card-body">
-            <h5 class="card-title">Proyecto 3</h5>
-            <p class="card-text">Descripción breve del proyecto.</p>
-            <a href="#" class="btn btn-primary" target="_blank">Ver más</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-card-sidebar">
+                <div class="profile-pic-wrapper">
+                    <img src="img/banner.jpg" alt="Profile Picture" class="profile-pic">
+                    <img src="img/TheCarlosXYZ.png" alt="Icon" class="profile-badge">
+                </div>
+                <div class="profile-info-sidebar">
+                    <h2>ElCarlosXYZ</h2>
+                    <p class="username">TheCarlosXYZ · él/lo</p>
+                    <p class="bio">Estudiante de Diseño y Programación Web, en formación y desarrollo de proyectos.</p>
+                    <button class="edit-profile-btn">Editar perfil</button>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Huancayo/Chilca
+                    </div>
+                    <div class="time">
+                        <i class="fas fa-clock"></i> 09:55 (UTC -12:00)
+                    </div>
+                    <a href="https://thecarlosxyz.github.io/" class="website-link">
+                        <i class="fas fa-link"></i> https://thecarlosxyz.github.io/
+                    </a>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <div class="header-banner">
+                <img src="https://raw.githubusercontent.com/TheCarlosXYZ/TheCarlosXYZ/main/miku.jpg" alt="Miku Banner" class="banner-image">
+                <img src="https://github.com/user-attachments/assets/fae54e71-c962-4868-ad16-f727a0593d00" alt="Arch Linux Logo" class="arch-logo">
+            </div>
 
-  <!-- Contacto -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Contacto</h2>
-    <p class="text-center">¿Quieres trabajar conmigo? ¡Escríbeme!</p>
-    <div class="d-flex justify-content-center gap-3">
-      <a href="mailto:carlosjoseponce2019@gmail.com" class="btn btn-outline-primary">Email</a>
-      <a href="https://github.com/TheCarlosXYZ" class="btn btn-outline-dark" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/" class="btn btn-outline-info" target="_blank">LinkedIn</a>
+            <div class="profile-links-container">
+                <div class="profile-links">
+                    <a href="https://github.com/TheCarlosXYZ?tab=followers" class="follow-btn">
+                        <img src="https://img.shields.io/github/followers/TheCarlosXYZ?label=Follow&style=social" alt="GitHub Followers">
+                    </a>
+                    <a href="https://github.com/TheCarlosXYZ?tab=stars" class="stars-btn">
+                        <img src="https://img.shields.io/github/stars/TheCarlosXYZ?style=social" alt="GitHub Stars">
+                    </a>
+                </div>
+            </div>
+
+            <div class="bio-section">
+                <p>
+                    🌱 Actualmente inmerso en el mundo de **Arch Linux**, fascinado por la elegancia de **Hyprland** y siempre en busca de **Dotfiles** inspiradores como **HyDE**, **HyprLuna** y **End-4 dots**.
+                </p>
+                <p>
+                    💻 Construyendo apasionadamente un proyecto de **Arch Installer**.
+                </p>
+            </div>
+
+            <div class="section skills-section">
+                <h2>Habilidades</h2>
+                <div class="skills-table">
+                    <div class="skill-group">
+                        <h3>Sitio web</h3>
+                        <img src="https://skillicons.dev/icons?i=html,css,js,sass,py" alt="Website Skills">
+                    </div>
+                    <div class="skill-group">
+                        <h3>Programación</h3>
+                        <img src="https://skillicons.dev/icons?i=bash,vscode,vscodium,sublime,github" alt="Programming Skills">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section os-systems">
+                <h2>Sistemas operativos</h2>
+                <div class="os-icons">
+                    <img src="https://skillicons.dev/icons?i=windows,arch,linux,mint,ubuntu" alt="Operating Systems">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Contribuciones de comer serpientes en el último año</h2>
+                <div class="contribution-snake">
+                    <img src="https://github.com/user-attachments/assets/767354e9-fe1e-4009-b421-2f49388bfda5" alt="Contribution Snake">
+                </div>
+            </div>
+            
+            <div class="section stats-cards-container">
+                <div class="stats-group">
+                    <h3>Estadísticas de TheCarlosXYZ</h3>
+                    <img src="https://github-readme-stats.vercel.app/api?username=CtorW&theme=onedark&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats">
+                </div>
+                <div class="stats-group">
+                    <h3>Racha definitiva</h3>
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=CtorW&theme=onedark&hide_border=true" alt="GitHub Streak Stats">
+                </div>
+            </div>
+
+            <div class="section lang-section">
+                <h2>La mayoría de los Lang</h2>
+                <div class="lang-card">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CtorW&theme=onedark&show_icons=true&hide_border=true&layout=compact" alt="Top Languages">
+                </div>
+            </div>
+
+            <div class="section contacts-section">
+                <h2>Contactos</h2>
+                <div class="contact-icons">
+                    <a href="mailto:carlosjoseponce@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" alt="Gmail"></a>
+                    <a href="https://instagram.com/xir.rence"><img src="https://skillicons.dev/icons?i=instagram" alt="Instagram"></a>
+                    <a href="https://discord.com/users/729473858179956859"><img src="https://skillicons.dev/icons?i=discord" alt="Discord"></a>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Crédito: <a href="https://github.com/TheCarlosXYZ">TheCarlosXYZ</a></p>
+                <p>Última edición: 12/04/2025</p>
+            </div>
+        </main>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 - Portafolio creado por TheCarlosXYZ 🚀</p>
-  </footer>
-
 </body>
 </html>
