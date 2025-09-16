@@ -3,65 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tareas de Semestre</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tareas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="top-nav">
-        <a href="index.html" class="top-nav-link">Volver a Perfil</a>
-    </div>
-    
-    <div class="container mt-5">
-        <h1 class="text-center text-light mb-4">Tareas de la Semana 1 al 16</h1>
-        
-        <div class="accordion" id="taskAccordion">
-            </div>
-
-        <div class="task-actions mt-4 text-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
-                Subir Archivo o Carpeta
-            </button>
+    <header class="top-nav">
+        <div class="top-nav-content">
+            <a href="#" class="top-nav-logo-link">
+                <img src="img/logo.png" alt="Logo de TheCarlosXYZ" class="site-logo">
+            </a>
+            <a href="index.html" class="top-nav-link">Volver al Perfil</a>
         </div>
-    </div>
+    </header>
 
-    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title" id="uploadModalLabel">Subir Tarea</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="uploadForm">
-                        <div class="mb-3">
-                            <label for="weekSelect" class="form-label">Selecciona la Semana</label>
-                            <select class="form-select form-select-dark bg-secondary text-light border-secondary" id="weekSelect" aria-label="Seleccionar semana">
-                                <option selected disabled>Elige una semana...</option>
-                                </select>
+    <main class="main-content tasks-page">
+        <div class="card-grid">
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S1</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 1</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
                         </div>
-                        <div class="mb-3">
-                            <label for="fileUpload" class="form-label">Subir Archivo o Carpeta</label>
-                            <input class="form-control form-control-dark bg-secondary text-light border-secondary" type="file" id="fileUpload" multiple webkitdirectory directory>
-                            <small class="form-text text-muted">Puedes seleccionar un archivo o una carpeta completa.</small>
-                        </div>
-                        <div class="mb-3">
-                            <label for="taskName" class="form-label">Nombre de la Tarea</label>
-                            <input type="text" class="form-control form-control-dark bg-secondary text-light border-secondary" id="taskName" placeholder="Escribe el nombre de tu tarea">
-                        </div>
-                    </form>
-                    <div id="uploadStatus" class="mt-3 text-center"></div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
                 </div>
-                <div class="modal-footer border-secondary">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="uploadBtn">Subir</button>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S2</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 2</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
                 </div>
-            </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S3</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 3</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S4</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 4</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S5</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 5</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S6</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 6</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S7</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 7</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S8</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 8</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S9</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 9</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S10</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 10</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S11</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 11</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S12</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 12</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S13</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 13</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S14</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 14</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S15</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 15</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="tu-url-aqui.html" class="task-link">
+                <div class="task-card">
+                    <div class="task-icon-container" style="background-color: #726d6e;">
+                        <span class="task-initials">S16</span>
+                    </div>
+                    <div class="task-details">
+                        <span class="task-title">Semanas 16</span>
+                        <div class="task-actions">
+                            <i class="fas fa-list"></i>
+                            <i class="fas fa-file-download"></i>
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+                    </div>
+                    <div class="task-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                </div>
+            </a>
         </div>
-    </div>
+    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <footer class="footer">
+        <p>Crédito: <a href="https://github.com/TheCarlosXYZ">TheCarlosXYZ</a></p>
+        <p>Última edición: 12/04/2025</p>
+    </footer>
 </body>
 </html>
