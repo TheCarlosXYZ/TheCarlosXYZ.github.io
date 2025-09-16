@@ -1,3 +1,4 @@
+/* Variables CSS para una mejor gestión de colores y bordes */
 :root {
     --bg-color: #0d1117;
     --card-color: #161b22;
@@ -6,6 +7,7 @@
     --border-color: #30363d;
 }
 
+/* Estilos generales del cuerpo */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     background-color: var(--bg-color);
@@ -14,9 +16,9 @@ body {
     padding: 0;
 }
 
+/* 1. Barra de navegación superior */
 .top-nav {
     background-color: #111;
-    color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: flex-end;
@@ -37,6 +39,7 @@ body {
     background-color: #24292f;
 }
 
+/* 2. Contenedor principal de la página (sidebar + main content) */
 .container {
     display: flex;
     max-width: 1280px;
@@ -45,18 +48,18 @@ body {
     gap: 20px;
 }
 
+/* 3. Estilos de la barra lateral (Sidebar) */
 .sidebar {
     width: 296px;
     flex-shrink: 0;
-    background-color: transparent;
 }
 
-.profile-card-sidebar {
-    background-color: transparent;
-    padding: 0;
-    text-align: center;
-    border: 1px solid var(--border-color);
+.profile-card {
+    background-color: var(--card-color);
+    padding: 20px;
     border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .profile-pic-wrapper {
@@ -93,12 +96,11 @@ body {
     object-fit: cover;
 }
 
-.profile-info-sidebar {
-    padding: 16px;
+.profile-details {
     text-align: left;
 }
 
-.profile-info-sidebar h2 {
+.profile-details h2 {
     margin: 0;
     font-size: 1.5em;
     font-weight: 600;
@@ -126,6 +128,7 @@ body {
     border-radius: 6px;
     cursor: pointer;
     margin-top: 16px;
+    transition: background-color 0.2s;
 }
 
 .edit-profile-btn:hover {
@@ -146,23 +149,28 @@ body {
     text-decoration: none;
 }
 
+/* 4. Estilos del contenido principal */
 .main-content {
     flex-grow: 1;
 }
 
-.header-banner {
+/* Sección de banner */
+.banner-section {
     position: relative;
     width: 100%;
-    height: 300px;
-    background-color: #111;
     text-align: center;
-    overflow: hidden;
     border-radius: 12px;
     border: 1px solid var(--border-color);
+    overflow: hidden;
     margin-bottom: 20px;
 }
 
-.arch-logo {
+.banner-image-main {
+    width: 100%;
+    display: block;
+}
+
+.banner-logo {
     position: absolute;
     top: 20px;
     left: 50%;
@@ -170,46 +178,72 @@ body {
     width: 50px;
 }
 
-.banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
-
-.profile-links-container {
-    padding: 10px;
-    display: flex;
-    justify-content: flex-start;
+/* 5. Estilos de la biografía y los enlaces */
+.info-section {
+    padding: 20px;
+    background-color: var(--card-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
 }
 
 .profile-links {
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
-.bio-section {
-    padding: 0 20px 20px 20px;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 20px;
-}
-
-.bio-section p {
-    font-size: 1.1em;
-    line-height: 1.5;
+/* Estilos para los puntos con borde */
+.bio-list {
+    list-style: none; /* Elimina los puntos por defecto */
+    padding-left: 0;
     margin: 0;
 }
 
+.bio-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px; /* Deja espacio para el nuevo punto */
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.bio-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color); /* Borde para el punto */
+    background-color: var(--card-color);
+}
+
+/* Estilos para el texto con borde */
+.bordered-text {
+    display: inline-block;
+    padding: 2px 6px;
+    border: 1px solid var(--border-color); /* Borde para el texto */
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+/* 6. Estilos de las secciones principales (Habilidades, SO, etc.) */
 .section {
     background-color: var(--card-color);
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;
     border: 1px solid var(--border-color);
+    text-align: center;
 }
 
-h2 {
-    color: var(--header-color);
+.section-title {
+    color: var(--text-color);
     font-size: 1.5em;
     margin-top: 0;
     border-bottom: 1px solid var(--border-color);
@@ -217,7 +251,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.skills-table {
+.skills-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -231,7 +265,7 @@ h2 {
     font-size: 1.2em;
 }
 
-.os-icons img, .contribution-snake img {
+.os-icons img, .contribution-snake img, .stats-cards-container img, .lang-card img {
     max-width: 100%;
     height: auto;
 }
@@ -245,15 +279,6 @@ h2 {
 
 .stats-group {
     flex: 1 1 45%;
-}
-
-.stats-group img, .lang-card img {
-    max-width: 100%;
-    height: auto;
-}
-
-.contacts-section h2 {
-    text-align: center;
 }
 
 .contact-icons {
@@ -272,9 +297,12 @@ h2 {
     transform: scale(1.1);
 }
 
+/* 7. Pie de página */
 .footer {
     text-align: center;
     margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
     font-size: 0.9em;
     color: #8b949e;
 }
@@ -282,4 +310,17 @@ h2 {
 .footer a {
     color: var(--link-color);
     text-decoration: none;
+}
+
+/* 8. Estilos para la página de Tareas (tareas.html) */
+.accordion-button.bg-secondary.text-light {
+    background-color: #21262d !important;
+    border: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #21262d !important;
+    color: var(--link-color) !important;
+    box-shadow: none;
 }
