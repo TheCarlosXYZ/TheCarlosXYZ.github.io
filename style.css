@@ -429,3 +429,70 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* --- Estilos para la página de Login --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.login-card {
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--link-color);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #4a90e2;
+}
+
+.login-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
