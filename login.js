@@ -1,4 +1,4 @@
-.htmldocument.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
     const usernameInput = document.getElementById('username').value;
@@ -13,10 +13,15 @@
         // Si los datos son correctos, redirige a la página principal
         messageElement.textContent = 'Acceso concedido. Redirigiendo...';
         messageElement.style.color = '#28a745'; // Color verde para éxito
-        window.location.href = 'index.html'; // Redirige a la página de perfil
+        setTimeout(() => {
+            window.location.href = 'index.html'; // Redirige a la página de perfil
+        }, 1500);
     } else {
         // Si los datos son incorrectos, muestra un mensaje de error
         messageElement.textContent = 'Usuario o contraseña incorrectos.';
         messageElement.style.color = '#dc3545'; // Color rojo para error
+        // Limpiar el campo de contraseña
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
     }
 });
