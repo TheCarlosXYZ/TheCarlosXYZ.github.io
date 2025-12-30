@@ -1,0 +1,498 @@
+/* Variables CSS para una mejor gestión de colores y bordes */
+:root {
+    --bg-color: #0d1117;
+    --card-color: #161b22;
+    --text-color: #c9d1d9;
+    --link-color: #58a6ff;
+    --border-color: #30363d;
+}
+
+/* 1. Estilos generales del cuerpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Barra de navegación superior */
+/* 2. Barra de navegación superior */
+.top-nav {
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: center; /* Alinea verticalmente los elementos */
+    font-size: 0.9em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.top-nav-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el logo y el enlace */
+}
+
+.top-nav-logo-link {
+    display: flex; /* Para asegurar que el logo esté alineado si es un enlace */
+    align-items: center;
+}
+
+.site-logo {
+    height: 80px; /* Tamaño ajustado del logo */
+    width: auto; /* Mantiene la proporción */
+    vertical-align: middle; /* Alinea el logo verticalmente */
+}
+
+.top-nav-link {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.top-nav-link:hover {
+    background-color: #24292f;
+}
+
+/* ... (el resto de tu CSS se mantiene igual) ... */
+
+/* 3. Contenedor principal de la página (sidebar + main content) */
+.container {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* 4. Estilos de la barra lateral (Sidebar) */
+.sidebar {
+    width: 296px;
+    flex-shrink: 0;
+}
+
+.profile-card {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.profile-pic-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.profile-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    z-index: 10;
+    object-fit: cover;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.username {
+    color: #8b949e;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.bio {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-top: 16px;
+    color: #c9d1d9;
+}
+
+.edit-profile-btn {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #30363d;
+    background-color: #21262d;
+    color: var(--text-color);
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background-color 0.2s;
+}
+
+.edit-profile-btn:hover {
+    background-color: #30363d;
+}
+
+.location, .time, .website-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #8b949e;
+}
+
+.website-link {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* 5. Estilos del contenido principal */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Sección de banner */
+.banner-section {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.banner-image-main {
+    width: 100%;
+    display: block;
+}
+
+.banner-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+}
+
+/* 6. Estilos de la biografía y los enlaces */
+.info-section {
+    padding: 20px;
+    background-color: var(--card-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.profile-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los puntos con borde */
+.bio-list {
+    list-style: none; /* Elimina los puntos por defecto */
+    padding-left: 0;
+    margin: 0;
+}
+
+.bio-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px; /* Deja espacio para el nuevo punto */
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.bio-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color); /* Borde para el punto */
+    background-color: var(--card-color);
+}
+
+/* Estilos para el texto con borde */
+.bordered-text {
+    display: inline-block;
+    padding: 2px 6px;
+    border: 1px solid var(--border-color); /* Borde para el texto */
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+/* 7. Estilos de las secciones principales (Habilidades, SO, etc.) */
+.section {
+    background-color: var(--card-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.section-title {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-group h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.os-icons img, .contribution-snake img, .stats-cards-container img, .lang-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.stats-cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stats-group {
+    flex: 1 1 45%;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-icons img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.2s;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* 8. Pie de página */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: #8b949e;
+}
+
+.footer a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* 9. Estilos para la página de Tareas (tareas.html) */
+.accordion-button.bg-secondary.text-light {
+    background-color: #21262d !important;
+    border: 1px solid var(--border-color);
+    color: var(--text-color) !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #21262d !important;
+    color: var(--link-color) !important;
+    box-shadow: none;
+}
+
+/* 10. Estilos de la página de Tareas (tareas.html) */
+.tasks-page {
+    padding: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.task-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.task-initials {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.task-details {
+    margin-left: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    color: #8b949e;
+}
+
+.task-actions i {
+    font-size: 1.1em;
+}
+
+.task-options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #8b949e;
+}
+.task-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto de la tarjeta */
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* --- Estilos para la página de Login --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.login-card {
+    background-color: var(--card-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #21262d;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--link-color);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #4a90e2;
+}
+
+.login-message {
+    margin-top: 15px;
+    font-weight: bold;
+}

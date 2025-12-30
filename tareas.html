@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/logo.png">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: var(--card-color);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .modal-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .modal-close:hover {
+            background-color: var(--border-color);
+        }
+        
+        .modal-body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .modal-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            font-size: 0.95em;
+        }
+        
+        .modal-btn-primary {
+            background-color: var(--link-color);
+            color: white;
+            border-color: var(--link-color);
+        }
+        
+        .modal-btn-primary:hover {
+            background-color: #4a90e2;
+            transform: translateY(-2px);
+        }
+        
+        .modal-btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+        
+        .modal-btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+        
+        .task-actions a {
+            color: #8b949e;
+            text-decoration: none;
+            transition: color 0.2s, transform 0.2s;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .task-actions a:hover {
+            color: var(--link-color);
+            transform: scale(1.1);
+        }
+        
+        .task-actions a:hover i {
+            color: var(--link-color);
+        }
+        
+        .task-actions i {
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        
+        .external-link {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        
+        .external-link:hover {
+            color: var(--link-color);
+            transform: scale(1.1);
+        }
+        
+        .preview-content {
+            background-color: #0d1117;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .preview-content h3 {
+            color: var(--link-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .preview-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .preview-content li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="top-nav-content">
+            <a href="#" class="top-nav-logo-link">
+                <img src="img/logo.png" alt="Logo de TheCarlosXYZ" class="site-logo">
+            </a>
+            <a href="index.html" class="top-nav-link">Volver al Perfil</a>
+        </div>
+    </header>
+
+    <main class="main-content tasks-page">
+        <div class="card-grid">
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S1</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 1</span>
+                    <div class="task-actions">
+                        <a href="url-del-archivo.html" title="Ver tarea"><i class="fas fa-list"></i></a>
+                        <a href="url-para-descargar.pdf" download title="Descargar"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S2</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 2</span>
+                    <div class="task-actions">
+                        <a href="url-del-archivo.html" title="Ver tarea"><i class="fas fa-list"></i></a>
+                        <a href="url-para-descargar.pdf" download title="Descargar"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S3</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 3</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 3', 'semana3'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana3.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S4</span>
+                </div>
+                    <div class="task-details">
+                    <span class="task-title">Semanas 4</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 4', 'semana4'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana4.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S5</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 5</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 5', 'semana5'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana5.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S6</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 6</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 6', 'semana6'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana6.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S7</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 7</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 7', 'semana7'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana7.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S8</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 8</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 8', 'semana8'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana8.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S9</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 9</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 9', 'semana9'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana9.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S10</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 10</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 10', 'semana10'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana10.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S11</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 11</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 11', 'semana11'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana11.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S12</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 12</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 12', 'semana12'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana12.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S13</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 13</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 13', 'semana13'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana13.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S14</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 14</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 14', 'semana14'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana14.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S15</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 15</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 15', 'semana15'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana15.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-icon-container" style="background-color: #726d6e;">
+                    <span class="task-initials">S16</span>
+                </div>
+                <div class="task-details">
+                    <span class="task-title">Semanas 16</span>
+                    <div class="task-actions">
+                        <a href="#" onclick="openPreview('Semana 16', 'semana16'); return false;" title="Vista previa"><i class="fas fa-list"></i></a>
+                        <a href="semana16.pdf" download title="Descargar PDF"><i class="fas fa-file-download"></i></a>
+                        <i class="fas fa-external-link-alt external-link" onclick="window.open('https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing', '_blank')" title="Ver en Google Docs"></i>
+                    </div>
+                </div>
+                <div class="task-options">
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Vista Previa</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="preview-content">
+                    <h3>Contenido de la Semana</h3>
+                    <p>Cargando contenido...</p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <a href="#" id="modalDownload" class="modal-btn modal-btn-primary" download>
+                    <i class="fas fa-file-download"></i>
+                    Descargar PDF
+                </a>
+                <a href="#" id="modalExternal" class="modal-btn modal-btn-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    Ver en Google Docs
+                </a>
+                <button class="modal-btn modal-btn-secondary" onclick="closeModal()">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Crédito: <a href="https://github.com/TheCarlosXYZ">TheCarlosXYZ</a></p>
+        <p>Última edición: 12/04/2025</p>
+    </footer>
+
+    <script>
+        // Sample content data for each week
+        const weekContent = {
+            semana1: {
+                title: 'Semana 1 - Introducción y Fundamentos',
+                content: `
+                    <h3>Temas cubiertos:</h3>
+                    <ul>
+                        <li>Introducción al curso</li>
+                        <li>Conceptos básicos de programación</li>
+                        <li>Configuración del entorno de desarrollo</li>
+                        <li>Primeros ejercicios prácticos</li>
+                    </ul>
+                    <h3>Objetivos de aprendizaje:</h3>
+                    <ul>
+                        <li>Comprender los fundamentos del curso</li>
+                        <li>Configurar el entorno de trabajo</li>
+                        <li>Ejecutar primeros programas</li>
+                    </ul>
+                `,
+                downloadUrl: 'semana1.pdf',
+                externalUrl: 'https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing'
+            },
+            semana2: {
+                title: 'Semana 2 - Variables y Tipos de Datos',
+                content: `
+                    <h3>Temas cubiertos:</h3>
+                    <ul>
+                        <li>Variables y constantes</li>
+                        <li>Tipos de datos primitivos</li>
+                        <li>Operadores aritméticos</li>
+                        <li>Ejercicios prácticos</li>
+                    </ul>
+                    <h3>Objetivos de aprendizaje:</h3>
+                    <ul>
+                        <li>Declarar y usar variables</li>
+                        <li>Comprender los tipos de datos</li>
+                        <li>Realizar operaciones básicas</li>
+                    </ul>
+                `,
+                downloadUrl: 'semana2.pdf',
+                externalUrl: 'https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing'
+            },
+            semana3: {
+                title: 'Semana 3 - Estructuras de Control',
+                content: `
+                    <h3>Temas cubiertos:</h3>
+                    <ul>
+                        <li>Condicionales if-else</li>
+                        <li>Bucles for y while</li>
+                        <li>Estructuras switch</li>
+                        <li>Casos prácticos</li>
+                    </ul>
+                    <h3>Objetivos de aprendizaje:</h3>
+                    <ul>
+                        <li>Controlar el flujo del programa</li>
+                        <li>Implementar bucles</li>
+                        <li>Tomar decisiones condicionales</li>
+                    </ul>
+                `,
+                downloadUrl: 'semana3.pdf',
+                externalUrl: 'https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing'
+            }
+        };
+
+        // Generate default content for weeks 4-16
+        for (let i = 4; i <= 16; i++) {
+            weekContent[`semana${i}`] = {
+                title: `Semana ${i} - Temas Avanzados`,
+                content: `
+                    <h3>Temas cubiertos:</h3>
+                    <ul>
+                        <li>Conceptos avanzados de la semana ${i}</li>
+                        <li>Ejercicios prácticos</li>
+                        <li>Proyectos aplicados</li>
+                        <li>Evaluación de conocimientos</li>
+                    </ul>
+                    <h3>Objetivos de aprendizaje:</h3>
+                    <ul>
+                        <li>Aplicar conceptos aprendidos</li>
+                        <li>Desarrollar proyectos</li>
+                        <li>Evaluación continua</li>
+                    </ul>
+                `,
+                downloadUrl: `semana${i}.pdf`,
+                externalUrl: 'https://docs.google.com/document/d/1pjhf6m5R96VLcvInAnUXfBMKrBBHrOXU0XI0G1-vaFY/edit?usp=sharing'
+            };
+        }
+
+        function openPreview(weekTitle, weekId) {
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const modalDownload = document.getElementById('modalDownload');
+            const modalExternal = document.getElementById('modalExternal');
+            
+            const content = weekContent[weekId];
+            
+            modalTitle.textContent = content.title;
+            modalBody.innerHTML = `<div class="preview-content">${content.content}</div>`;
+            modalDownload.href = content.downloadUrl;
+            modalDownload.download = `${weekTitle}.pdf`;
+            modalExternal.href = content.externalUrl;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('previewModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('previewModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
